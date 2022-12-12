@@ -1,0 +1,13 @@
+name: Testing custom actions
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load & cache dependencies
+        uses: ./.github/actions/cached-deps
+      - name: Output a sentence
+        run: echo "This is to test custom actions"
